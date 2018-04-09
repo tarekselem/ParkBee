@@ -14,7 +14,7 @@ namespace ParkBee.Data.Common
             IList<Expression<Func<TEntity, object>>> includedProperties = null, int? pageIndex = null, int? pageSize = null);
         TEntity GetById(object id);
         Task<TEntity> GetAsyncByIdAsync(object id);
-        object Insert(TEntity entity);
+        TEntity Insert(TEntity entity);
         void BulkInsert(IEnumerable<TEntity> entities);
         bool Update(TEntity entity);
         bool Delete(object id);

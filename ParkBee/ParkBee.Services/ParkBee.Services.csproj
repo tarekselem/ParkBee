@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ParkBee.Data.Common\ParkBee.Data.Common.csproj" />
+    <ProjectReference Include="..\ParkBee.Models\ParkBee.Models.csproj" />
+  </ItemGroup>
+
+</Project>

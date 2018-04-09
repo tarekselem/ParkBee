@@ -114,9 +114,9 @@ namespace ParkBee.Data.EFMemory
             _context.Entry(entity).State = EntityState.Detached;
         }
 
-        public virtual object Insert(TEntity entity)
+        public virtual TEntity Insert(TEntity entity)
         {
-            return _entitySet.Add(entity);
+            return _entitySet.Add(entity).Entity;
         }
 
         public virtual bool Update(TEntity entity)
