@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Text;
 
-namespace ParkBee.Models.Entities
+namespace Entities
 {
     public class BaseEntity
     {

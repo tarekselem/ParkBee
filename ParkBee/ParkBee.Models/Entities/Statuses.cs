@@ -1,7 +1,7 @@
 ﻿
 using System.ComponentModel;
 
-namespace ParkBee.Models.Entities
+namespace Entities
 {
     public enum Statuses
     {

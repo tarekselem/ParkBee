@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using ParkBee.CrossCutting;
 using ParkBee.Services.Interfaces;
 
 namespace ParkBee.API.Controllers

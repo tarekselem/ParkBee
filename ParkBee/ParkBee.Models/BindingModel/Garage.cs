@@ -1,5 +1,4 @@
-﻿using ParkBee.Models.Entities;
-using System;
+﻿using System;
 
 namespace BindingModel
 {
@@ -7,7 +6,7 @@ namespace BindingModel
     {
         public string Name { get; set; }
         public string Address { get; set; }
-        public Statuses Status { get; set; }
+        public Entities.Statuses Status { get; set; }
         public Guid OwnerId { get; set; }
     }
 }

@@ -5,6 +5,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="6.2.2" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\ParkBee.Data.Common\ParkBee.Data.Common.csproj" />
     <ProjectReference Include="..\ParkBee.Data.EFMemory\ParkBee.Data.EFMemory.csproj" />
     <ProjectReference Include="..\ParkBee.Models\ParkBee.Models.csproj" />

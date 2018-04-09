@@ -1,7 +1,7 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace ParkBee.Models.Entities
+namespace Entities
 {
     public class Owner : BaseEntity
     {

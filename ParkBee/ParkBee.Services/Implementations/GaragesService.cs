@@ -1,5 +1,4 @@
 ﻿using ParkBee.Data.Common;
-using ParkBee.Models.Entities;
 using ParkBee.Services.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -17,15 +16,15 @@ namespace ParkBee.Services.Implementations
             _unitOfWork = unitOfWork;
         }
 
-        Garage IGaragesService.Add(BindingModel.Garage garageBindingModel)
+        ViewModels.Garage IGaragesService.Add(BindingModel.Garage garageBindingModel)
         {
-            if (customerBindingModel == null) throw new ArgumentNullException(nameof(customerBindingModel));
+            if (garageBindingModel == null) throw new ArgumentNullException(nameof(garageBindingModel));
 
-            var customerEntity = AutoMapper.Mapper.Map<Entities.Customer>(customerBindingModel);
-            var addedCustomer = _unitOfWork.RepositoryFor<Entities.Customer>().Insert(customerEntity);
+            var garageEntity = AutoMapper.Mapper.Map<Entities.Garage>(garageBindingModel);
+            var addedGarage = _unitOfWork.RepositoryFor<Entities.Garage>().Insert(garageEntity);
             _unitOfWork.SaveChanges();
 
-            return AutoMapper.Mapper.Map<ViewModels.Customer>(addedCustomer);
+            return AutoMapper.Mapper.Map<ViewModels.Garage>(addedGarage);
         }
 
         bool IGaragesService.Delete(Guid id)
@@ -33,17 +32,17 @@ namespace ParkBee.Services.Implementations
             throw new NotImplementedException();
         }
 
-        Task<Garage> IGaragesService.Get(int pageIndex, int pageSize, string keyword)
+        Task<ViewModels.GarageList> IGaragesService.Get(int pageIndex, int pageSize, string keyword)
         {
             throw new NotImplementedException();
         }
 
-        Garage IGaragesService.GetCustomerById(Guid id)
+        ViewModels.GarageDetails IGaragesService.GetCustomerById(Guid id)
         {
             throw new NotImplementedException();
         }
 
-        bool IGaragesService.Update(object customerBindingModel)
+        bool IGaragesService.Update(BindingModel.Garage customerBindingModel)
         {
             throw new NotImplementedException();
         }

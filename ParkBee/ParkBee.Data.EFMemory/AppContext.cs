@@ -1,6 +1,5 @@
 ﻿
 using Microsoft.EntityFrameworkCore;
-using ParkBee.Models.Entities;
 
 namespace ParkBee.Data.EFMemory
 {
@@ -15,9 +14,9 @@ namespace ParkBee.Data.EFMemory
         { }
 
 
-        public DbSet<Garage> Garages { get; set; }
-        public DbSet<Door> Doors { get; set; }
-        public DbSet<Owner> Owners { get; set; }
+        public DbSet<Entities.Garage> Garages { get; set; }
+        public DbSet<Entities.Door> Doors { get; set; }
+        public DbSet<Entities.Owner> Owners { get; set; }
 
 
 

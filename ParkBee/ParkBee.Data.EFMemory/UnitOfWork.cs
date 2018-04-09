@@ -26,7 +26,7 @@ namespace ParkBee.Data.EFMemory
 
         public int SaveChanges()
         {
-            foreach (var entry in _context.ChangeTracker.Entries<Models.Entities.BaseEntity>())
+            foreach (var entry in _context.ChangeTracker.Entries<Entities.BaseEntity>())
             {
                 var entity = entry.Entity;
                 if (entry.State == EntityState.Added)

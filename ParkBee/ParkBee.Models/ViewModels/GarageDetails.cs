@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace ParkBee.Models.ViewModels
+namespace ViewModels
 {
-    class GarageViewModel
+    public class GarageDetails
     {
     }
 }
