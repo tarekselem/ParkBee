@@ -17,9 +17,15 @@ namespace ParkBee.Services.Implementations
             _unitOfWork = unitOfWork;
         }
 
-        Garage IGaragesService.Add(object customerBindingModel)
+        Garage IGaragesService.Add(BindingModel.Garage garageBindingModel)
         {
-            throw new NotImplementedException();
+            if (customerBindingModel == null) throw new ArgumentNullException(nameof(customerBindingModel));
+
+            var customerEntity = AutoMapper.Mapper.Map<Entities.Customer>(customerBindingModel);
+            var addedCustomer = _unitOfWork.RepositoryFor<Entities.Customer>().Insert(customerEntity);
+            _unitOfWork.SaveChanges();
+
+            return AutoMapper.Mapper.Map<ViewModels.Customer>(addedCustomer);
         }
 
         bool IGaragesService.Delete(Guid id)

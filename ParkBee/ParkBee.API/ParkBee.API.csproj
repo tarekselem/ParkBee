@@ -17,7 +17,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\ParkBee.CrossCutting\ParkBee.CrossCutting.csproj" />
     <ProjectReference Include="..\ParkBee.Models\ParkBee.Models.csproj" />
     <ProjectReference Include="..\ParkBee.Services\ParkBee.Services.csproj" />
   </ItemGroup>
