@@ -1,0 +1,52 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2027
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{45790980-21E4-42F6-B419-587DFC9B05C0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data", "Data", "{18B38046-780F-44D2-8EE5-C6BC34E19786}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{754B6E1A-DEC4-4CF2-8175-ECAB353609F5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Shared", "Shared", "{8F9F505E-3845-4F20-8A32-9E7BCEDA21B6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{D7D9CB89-B8B2-4E73-BC2E-EEE44E95579F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ParkBee.Models", "ParkBee.Models\ParkBee.Models.csproj", "{7308F38F-DB15-4CA6-8CC0-0430F8D964FA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ParkBee.Data.Common", "ParkBee.Data.Common\ParkBee.Data.Common.csproj", "{C9324ED3-C0E8-4E53-8E74-CFC3DDCF863F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ParkBee.Data.EFMemory", "ParkBee.Data.EFMemory\ParkBee.Data.EFMemory.csproj", "{3941C783-4790-4352-8359-643FC2D0AA79}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7308F38F-DB15-4CA6-8CC0-0430F8D964FA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7308F38F-DB15-4CA6-8CC0-0430F8D964FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7308F38F-DB15-4CA6-8CC0-0430F8D964FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7308F38F-DB15-4CA6-8CC0-0430F8D964FA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C9324ED3-C0E8-4E53-8E74-CFC3DDCF863F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C9324ED3-C0E8-4E53-8E74-CFC3DDCF863F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C9324ED3-C0E8-4E53-8E74-CFC3DDCF863F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C9324ED3-C0E8-4E53-8E74-CFC3DDCF863F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3941C783-4790-4352-8359-643FC2D0AA79}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3941C783-4790-4352-8359-643FC2D0AA79}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3941C783-4790-4352-8359-643FC2D0AA79}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3941C783-4790-4352-8359-643FC2D0AA79}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{7308F38F-DB15-4CA6-8CC0-0430F8D964FA} = {8F9F505E-3845-4F20-8A32-9E7BCEDA21B6}
+		{C9324ED3-C0E8-4E53-8E74-CFC3DDCF863F} = {18B38046-780F-44D2-8EE5-C6BC34E19786}
+		{3941C783-4790-4352-8359-643FC2D0AA79} = {18B38046-780F-44D2-8EE5-C6BC34E19786}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {09295E22-F439-4834-A2FC-0018EEA56429}
+	EndGlobalSection
+EndGlobal
