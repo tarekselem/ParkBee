@@ -13,9 +13,9 @@ namespace ParkBee.API.Controllers
     {
         private readonly IGaragesService _garageService;
 
-        public ValuesController()
+        public ValuesController(IGaragesService garageService)
         {
-            _garageService = UnityConfiguration.Container.Resolve<IGaragesService>();
+            _garageService = garageService;
         }
 
         // GET api/values
