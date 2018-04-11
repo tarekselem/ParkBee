@@ -10,7 +10,7 @@ namespace ParkBee.Services.Configurations
             Mapper.Initialize(config =>
             {
                 #region From Binding Models to Entity
-                config.CreateMap<BindingModel.Garage, Entities.Garage>();
+                config.CreateMap<BindingModels.Garage, Entities.Garage>();
 
                 #endregion
 

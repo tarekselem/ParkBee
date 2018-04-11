@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace ParkBee.Services.Implementations
 {
-    public class GaragesService:IGaragesService
+    public class GaragesService : IGaragesService
     {
         private readonly IUnitOfWork _unitOfWork;
 
@@ -18,7 +18,7 @@ namespace ParkBee.Services.Implementations
             _unitOfWork = unitOfWork;
         }
 
-        ViewModels.Garage IGaragesService.Add(BindingModel.Garage garageBindingModel)
+        ViewModels.Garage IGaragesService.Add(BindingModels.Garage garageBindingModel)
         {
             if (garageBindingModel == null) throw new ArgumentNullException(nameof(garageBindingModel));
 
@@ -39,30 +39,23 @@ namespace ParkBee.Services.Implementations
             return result;
         }
 
-        Task<ViewModels.GarageList> IGaragesService.Get(int pageIndex, int pageSize, string keyword)
+        async Task<ViewModels.GarageList> IGaragesService.Get(int pageIndex, int pageSize, string keyword)
         {
             var predicate = BuildSearchFilter(keyword);
 
-            //var items = await _unitOfWork.RepositoryFor<Entities.Garage>().GetAsync(garage => new ViewModels.Garage
-            //{
-            //    Id = garage.Id,
-            //    CustomerId = garage.CustomerId,
-            //    CompanyName = customer.CompanyName,
-            //    ContactName = customer.ContactName,
-            //    ContactTile = customer.ContactTile,
-            //    Phone = customer.Phone,
-            //    Fax = customer.Fax,
-            //    PostalCode = customer.PostalCode,
-            //    Address = customer.Address,
-            //    City = customer.City,
-            //    Region = customer.Region,
-            //    Country = customer.Country,
-            //    OrdersCount = customer.Orders.Count
-            //}, predicate, c => c.OrderBy(o => o.Id), null, pageIndex, pageSize);
-            //var total = _unitOfWork.RepositoryFor<Entities.Garage>().Get().Count();
+            var items = await _unitOfWork.RepositoryFor<Entities.Garage>().GetAsync(garage => new ViewModels.Garage
+            {
+                Id = garage.Id,
+                Name = garage.Name,
+                Address = garage.Address,
+                Status = garage.Status.ToString(),
+                OwnerId = garage.OwnerId,
+                OwnerName = garage.Owner.FullName,
+                DoorsCount = garage.Doors.Count
+            }, predicate, c => c.OrderBy(o => o.Id), null, pageIndex, pageSize);
+            var total = _unitOfWork.RepositoryFor<Entities.Garage>().Get().Count();
 
-            //return new ViewModels.CustomersList { Items = items, Total = total };
-            return null;
+            return new ViewModels.GarageList { Items = items, Total = total };
         }
 
         ViewModels.GarageDetails IGaragesService.GetGarageById(Guid id)
@@ -75,7 +68,7 @@ namespace ParkBee.Services.Implementations
             return AutoMapper.Mapper.Map<ViewModels.GarageDetails>(garageEntity);
         }
 
-        bool IGaragesService.Update(BindingModel.Garage garageBindingModel)
+        bool IGaragesService.Update(BindingModels.Garage garageBindingModel)
         {
             if (garageBindingModel == null) throw new ArgumentNullException(nameof(garageBindingModel));
 
@@ -86,7 +79,6 @@ namespace ParkBee.Services.Implementations
 
             return result;
         }
-
 
         #region Private Methods
         private ExpressionStarter<Entities.Garage> BuildSearchFilter(string keyword)

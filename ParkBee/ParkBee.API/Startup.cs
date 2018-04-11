@@ -24,6 +24,14 @@ namespace ParkBee.API
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new Swashbuckle.AspNetCore.Swagger.Info
+                {
+                    Title = "ParkBee",
+                    Version = "V1"
+                });
+            });
             DIConfigurations.RegisterServices(services);
         }
 
@@ -36,6 +44,12 @@ namespace ParkBee.API
             }
 
             app.UseMvc();
+            app.UseSwagger();
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
+            });
+            
         }
     }
 }
